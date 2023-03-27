@@ -4,7 +4,9 @@ import { apiUrl } from "../config.json";
 import axios from "axios";
 
 const movies = [];
-const apiEndpoint = apiUrl + "/movies";
+const apiEndpoint =
+  (process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : apiUrl) +
+  "/movies";
 const headers = {
   "Content-Type": "application/json",
 };

@@ -2,7 +2,9 @@ import { apiUrl, apiHeader } from "../config.json";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
 
-const apiEndpoint = apiUrl + "/auth";
+const apiEndpoint =
+  (process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : apiUrl) +
+  "/auth";
 const tokenKey = "token";
 
 export function setUserToken(jwt) {

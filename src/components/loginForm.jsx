@@ -32,7 +32,7 @@ class LoginForm extends Form {
   doSubmit = async () => {
     try {
       const { username, password } = this.state.data;
-      const resp = await auth.login(username, password);
+      await auth.login(username, password);
       // const { data: jwt } = await login(username, password);
       // {data:.jwt., status: 200, statusText: OK, config:.., headers:..x-auth-token.., request:...}
       // console.log(resp);

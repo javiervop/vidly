@@ -1,7 +1,9 @@
 import { apiUrl, apiHeader } from "../config.json";
 import axios from "axios";
 
-const apiEndpoint = apiUrl + "/users";
+const apiEndpoint =
+  (process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : apiUrl) +
+  "/users";
 
 function UserUrl(id) {
   return `${apiEndpoint}/${id}`;
